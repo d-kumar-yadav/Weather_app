@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> know your Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="atmospheric-conditions.png" type="image/x-icon">
+</head>
+<body>
+  <div class="wrapper">
+<h1 class="heading"> Weather </h1>
+ <div class="tab-container">
+  <p class="location-tab">Your weather</p>
+  <p class="search-tab">search weather</p>
+ </div>
+
+<div class="weather-container">
+
+<div class="weather-is">
+  <div class="city">
+  <p class="city-location">mohanpur</p>
+ <img class="country-code" src="">
+ </div>
+ <p class="weather-condition">haze</p>
+<img class="weather-icon">
+<p class="degree" data-temp>52 °C</p>
+
+<div class="weather-details">
+
+<div class="wind">
+  <img src="wind.png" alt="wind icon" class="wind-image" height="30px" width="30px">
+  <p class="wind-desc">Windspeed</p>
+  <p class="wind-is">10km/h</p>
+</div>
+
+<div class="humidity">
+  <img src="humidity.png" alt="humidity icon" class="humid-image" height="30px" width="30px">
+  <p class="humidity-desc">Humidity</p>
+  <p class="humidity-level">10%</p>
+</div>
+
+<div class="cloudiness">
+  <img src="cloud.png" alt="cloudiness icon" class="cloud-image" height="30px" width="30px">
+  <p class="cloudiness-desc">Cloudiness</p>
+  <p class="cloudiness-level">10%</p>
+</div>
+</div>
+</div>
+
+<div class="grant-location">
+  <img src="circle.png" alt="location" height="80px" width="80px" loading="lazy">
+  <p>Grant Location access</p>
+  <p>Allow access to get weather details</p>
+  <button   class="grant">Grant access</button>
+</div>
+
+<form class="form-container" data-search-form>
+<input placeholder="Search for City..." class="search-input" required>
+<button type="submit" class="search-btn">Search</button>
+</form>
+
+<div class="loading-section">
+  <img src="truck.gif" alt="loading" height="100px" width="100px">
+  <p>Loading weather details...</p>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+ 
+
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

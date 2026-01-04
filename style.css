@@ -1,0 +1,332 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+:root {
+    --color-bg-start: #F4F7FF;    /* Very light blue */
+    --color-bg-end: #FFFFFF;      /* White */
+    --color-text-dark: #2C3E50;  /* Dark slate blue */
+    --color-text-light: #7F8C8D; /* Muted grey */
+    --color-accent: #6C63FF;     /* Modern indigo */
+    --border-light: #E0E0E0;      /* Light border color */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+    background-repeat: no-repeat;
+    color: var(--color-text-dark);
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+/* --- 3. Main Wrapper & Heading --- */
+.wrapper {
+    width: 100%;
+    max-width: 450px; /* A clean, focused width */
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--color-text-dark);
+    letter-spacing: 1px;
+}
+
+/* --- 4. Tab Navigation --- */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #ECEFF1; /* Light grey pill background */
+    border-radius: 50px;
+    padding: 0.4rem;
+    margin-bottom: 2rem;
+}
+
+.location-tab,
+.search-tab {
+    flex-basis: 50%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    color: var(--color-text-light);
+}
+
+/* Style for the currently active tab */
+.tab-container .current-tab {
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+}
+
+/* --- 5. Main Content Container (BUG FIX) --- */
+.weather-container {
+    width: 100%;
+    min-height: 450px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(44, 62, 80, 0.1);
+    padding: 2rem;
+
+    /* * BUG FIX:
+     * Use `display: grid` to stack all child elements
+     * in the *exact same spot*. This ensures only
+     * the .active one is visible and centered.
+    */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+/* --- 6. The "Active" Class Logic (CRITICAL) --- */
+
+/* By default, hide all screens */
+.grant-location,
+.weather-is,
+.form-container,
+.loading-section {
+    /* Grid position (all in the same cell) */
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+
+    /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    
+    /* Transition for smooth fade-in/out */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+
+    /* Common layout for all screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Show only the screen that has the .active class */
+.grant-location.active,
+.weather-is.active,
+.form-container.active,
+.loading-section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- 7. Individual Screen Styles --- */
+
+/* -- Grant Location & Loading -- */
+.grant-location,
+.loading-section {
+    gap: 1.5rem;
+}
+.grant-location p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.grant-location p:last-of-type,
+.loading-section p {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    max-width: 280px;
+}
+.grant-location img,
+.loading-section img {
+    width: 100px;
+    height: 100px;
+}
+
+/* -- Search Form Screen -- */
+.form-container {
+    gap: 1rem;
+    width: 100%;
+}
+.search-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-light);
+    outline: none;
+    border-radius: 50px;
+    color: var(--color-text-dark);
+    background: #FAFAFA;
+    transition: all 0.3s ease;
+}
+.search-input::placeholder {
+    color: var(--color-text-light);
+}
+.search-input:focus {
+    border-color: var(--color-accent);
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.2);
+}
+
+/* Common button style */
+.grant,
+.search-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.3);
+}
+.grant:hover,
+.search-btn:hover {
+    background-color: #5A52E0; /* Slightly darker accent */
+    box-shadow: 0 6px 25px rgba(108, 99, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* --- 8. Weather Info Screen --- */
+.weather-is {
+    gap: 1rem;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.city {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.city-location {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.country-code {
+    width: 36px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.weather-condition {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    text-transform: capitalize;
+}
+
+.weather-icon {
+    width: 130px;
+    height: 130px;
+}
+
+.degree {
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* -- Weather Details (NO CARDS) -- */
+.weather-details {
+    display: flex;
+    justify-content: space-around; /* Evenly spaces the 3 items */
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border-light); /* Separator line */
+}
+
+/* This is the new "no card" style */
+.wind,
+.humidity,
+.cloudiness {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wind-image,
+.humid-image,
+.cloud-image {
+    width: 35px;
+    height: 35px;
+}
+
+.wind-desc,
+.humidity-desc,
+.cloudiness-desc {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+}
+
+.wind-is,
+.humidity-level,
+.cloudiness-level {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* --- 9. Responsive Design --- */
+@media (max-width: 480px) {
+    .weather-container {
+        padding: 1.5rem; /* A bit less padding on small screens */
+    }
+    .degree {
+        font-size: 3.5rem;
+    }
+    .city-location {
+        font-size: 1.75rem;
+    }
+    /* Stack the 3 details for more room */
+    .weather-details {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch; /* Makes all 3 items full width */
+    }
+    .wind,
+    .humidity,
+    .cloudiness {
+        /* Make them rows instead of columns for a nice list */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    .wind-desc,
+    .humidity-desc,
+    .cloudiness-desc {
+        order: 2; /* Move label to the middle */
+    }
+    .wind-image,
+    .humid-image,
+    .cloud-image {
+        order: 1;
+    }
+    .wind-is,
+    .humidity-level,
+    .cloudiness-level {
+        order: 3;
+    }
+}
