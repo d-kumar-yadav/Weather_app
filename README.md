@@ -15,10 +15,7 @@ A responsive weather dashboard application that allows users to view real-time w
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 - **API:** [OpenWeatherMap API](https://openweathermap.org/api)
 
-## 📸 Screenshots
 
-<!-- You can upload an image to your repo and link it here -->
-![App Screenshot]./Screenshot 2026-01-4 200506.png
 
 ## ⚙️ Getting Started
 
