@@ -1,6 +1,6 @@
 # 🌤️ Know Your Weather
 
-![Weather App Banner](https://via.placeholder.com/1000x300?text=Weather+App+Banner)
+
 
 > A sleek and user-friendly web application to check real-time weather conditions for your current location or any city worldwide.
 
