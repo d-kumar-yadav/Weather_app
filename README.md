@@ -1,54 +1,89 @@
-# Know Your Weather 
+# 🌤️ Know Your Weather
 
-A responsive weather dashboard application that allows users to view real-time weather conditions for their current location or search for specific cities worldwide.
+![Weather App Banner](https://via.placeholder.com/1000x300?text=Weather+App+Banner)
+
+> A sleek and user-friendly web application to check real-time weather conditions for your current location or any city worldwide.
+
+---
 
 ## 🚀 Features
 
-- **Current Location Weather:** Automatically detects user location (via Geolocation API) to fetch local weather.
-- **City Search:** Search for weather conditions in any city.
-- **Detailed Metrics:** Displays temperature, wind speed, humidity, and cloudiness.
-- **Dynamic UI:** Tabbed interface to switch between "Your Weather" and "Search Weather".
-- **Loading States:** Visual feedback while fetching data.
+- **📍 Auto-Location Detection**: Get weather updates for your current location with a single click using the "Grant Access" feature.
+- **🔍 Smart Search**: Easily search for weather conditions in any specific city.
+- **📊 Detailed Metrics**: View comprehensive weather data including:
+  - Temperature (°C)
+  - Wind Speed (km/h)
+  - Humidity (%)
+  - Cloudiness (%)
+- **⚡ Interactive UI**: Smooth tab switching between "Your Weather" and "Search Weather".
+- **⏳ Visual Feedback**: Includes loading states and error handling for a better user experience.
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-- **API:** [OpenWeatherMap API](https://openweathermap.org/api)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
+---
 
+## 📸 Screenshots
 
-## ⚙️ Getting Started
+| Your Weather | Search Weather |
+|:---:|:---:|
+| ![Your Weather](https://via.placeholder.com/300x500?text=Your+Weather) | ![Search Weather](https://via.placeholder.com/300x500?text=Search+Weather) |
 
-To run this project locally, follow these steps.
+*(Replace the placeholder links above with actual screenshots of your application)*
+
+---
+
+## 🏁 Getting Started
+
+Follow these steps to set up the project locally on your machine.
 
 ### Prerequisites
 
-You will need an API key from OpenWeatherMap to fetch weather data.
-1. Go to [OpenWeatherMap](https://openweathermap.org/).
-2. Sign up and generate a free API key.
+- A modern web browser (Chrome, Firefox, Edge, etc.)
+- A code editor (VS Code recommended)
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository**
    ```bash
    git clone https://github.com/d-kumar-yadav/Weather_app.git
    ```
 
-2. Navigate to the project directory:
+2. **Navigate to the project directory**
    ```bash
-   cd Weather-app
+   cd Weather_app
    ```
 
-3. Configure your API Key:
-   - Open `script.js`.
-   - Locate the variable where the API key is stored (e.g., `const API_KEY = ...`).
-   - Paste your OpenWeatherMap API key there.
+3. **Run the Project**
+   Simply open the `index.html` file in your browser.
 
-4. Run the App:
-   - Simply open `index.html` in your preferred web browser.
+---
+
+## ⚙️ Configuration
+
+This project likely uses a weather API (e.g., OpenWeatherMap). To ensure data fetching works correctly:
+
+1. Open `script.js`.
+2. Locate the API key variable.
+3. Ensure a valid API key is present.
+
+---
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page..
+Contributions are welcome! Feel free to open issues or submit pull requests to improve the application.
 
-Made with ❤️ by Dheeraj....
+---
+
+## 📄 License
+
+This project is open source.
+
+---
+
+Made with ❤️ by D Kumar Yadav
