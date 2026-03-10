@@ -28,13 +28,7 @@
 
 ---
 
-## 📸 Screenshots
 
-| Your Weather | Search Weather |
-|:---:|:---:|
-| ![Your Weather](https://via.placeholder.com/300x500?text=Your+Weather) | ![Search Weather](https://via.placeholder.com/300x500?text=Search+Weather) |
-
-*(Replace the placeholder links above with actual screenshots of your application)*
 
 ---
 
